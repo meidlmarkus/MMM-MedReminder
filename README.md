@@ -57,6 +57,7 @@ As soon as you have confirmed taking the medication, you will see a green dot fo
 
 
 ### Mark as taken
+To confirm that you have taken your medication, send the following notification:
 
 ```bash
 curl -X POST http://<mirror>:8080/notify \
@@ -65,6 +66,7 @@ curl -X POST http://<mirror>:8080/notify \
 ```
 
 ### Reset manually
+You can reset the confirmation, to manually have the reminder reappear. Note that the reset happens automatically at 3:00 AM per default.
 
 ```bash
 curl -X POST http://<mirror>:8080/notify \
