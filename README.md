@@ -48,7 +48,8 @@ In the morning you will see a reminder to take your medication:
 <img width="1430" height="180" alt="image" src="https://github.com/user-attachments/assets/19a75af2-e895-478b-96d2-9dcc3d6db362" />
 
 As soon as you have confirmed taking the medication, you will see a green dot for 5 seconds, and the reminder will disappear:
-<img width="1428" height="164" alt="image" src="https://github.com/user-attachments/assets/35d54e0e-4568-4430-92df-9ed4dea5aefd" />
+<img width="1434" height="188" alt="image" src="https://github.com/user-attachments/assets/9b3e3b25-b204-433c-b775-3fbfdb109796" />
+
 
 
 ### Mark as taken
