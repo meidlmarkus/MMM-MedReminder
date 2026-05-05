@@ -42,7 +42,14 @@ Add the module to your `config.js`:
 
 ## Usage
 
-The module reacts to MagicMirror notifications.
+The module reacts to MagicMirror notifications. Suggestion is to position it in the top_center, in our example right between the weather and the date/clock module.
+
+In the morning you will see a reminder to take your medication:
+<img width="1430" height="180" alt="image" src="https://github.com/user-attachments/assets/19a75af2-e895-478b-96d2-9dcc3d6db362" />
+
+As soon as you have confirmed taking the medication, you will see a green dot for 5 seconds, and the reminder will disappear:
+<img width="1428" height="164" alt="image" src="https://github.com/user-attachments/assets/35d54e0e-4568-4430-92df-9ed4dea5aefd" />
+
 
 ### Mark as taken
 
