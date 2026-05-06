@@ -1,6 +1,6 @@
 # MMM-MedReminder
 
-A minimal MagicMirror module for daily medication reminders.
+A minimal MagicMirror module for daily medication reminders that stay visible until confirmed.
 
 ---
 
@@ -45,27 +45,30 @@ Add the module to your `config.js`:
 The module reacts to MagicMirror notifications.
 
 Notifications can be triggered from various sources, for example:
-- shell scripts (e.g. using curl)
-- hardware buttons (via GPIO scripts)
-- existing MagicMirror button modules
-- external integrations (voice assistants, home automation, etc.)
 
-It is typically placed in the `top_center` position, for example between weather and clock modules.
+* shell scripts (e.g. using curl)  
+  _Note: triggering notifications via HTTP requires a module such as `MMM-CurlToNotification`._
+* hardware buttons (via GPIO scripts)
+* existing MagicMirror button modules
+* external integrations (voice assistants, home automation, etc.)
+
+The module is typically placed in the `top_center` position, for example between weather and clock modules for good visibility.
+
+### Example
 
 In the morning you will see a reminder to take your medication:
-<img width="1430" height="180" alt="image" src="https://github.com/user-attachments/assets/19a75af2-e895-478b-96d2-9dcc3d6db362" />
 
+<img width="100%" alt="Reminder active" src="https://github.com/user-attachments/assets/19a75af2-e895-478b-96d2-9dcc3d6db362" />
 
+<br><br>
 
+After confirming that you have taken the medication, a green dot is shown for 5 seconds, after which the reminder disappears:
 
-As soon as you have confirmed taking the medication, you will see a green dot for 5 seconds, and the reminder will disappear:
-<img width="1426" height="180" alt="image" src="https://github.com/user-attachments/assets/121fca2f-e03b-4d22-94ea-c6229658e48a" />
-
-
-
+<img width="100%" alt="Reminder confirmed" src="https://github.com/user-attachments/assets/121fca2f-e03b-4d22-94ea-c6229658e48a" />
 
 ### Mark as taken
-To confirm that you have taken your medication, send the following notification:
+
+If you are using curl, you can confirm that you have taken your medication by sending the following notification:
 
 ```bash
 curl -X POST http://<mirror>:8080/notify \
@@ -74,7 +77,10 @@ curl -X POST http://<mirror>:8080/notify \
 ```
 
 ### Reset manually
-You can reset the confirmation, to manually have the reminder reappear. Note that the reset happens automatically at 3:00 AM per default.
+
+If you are using curl, you can manually reset the confirmation by sending the following notification, which will make the reminder reappear.
+
+Note that the reset happens automatically at 03:00 by default.
 
 ```bash
 curl -X POST http://<mirror>:8080/notify \
@@ -87,17 +93,18 @@ curl -X POST http://<mirror>:8080/notify \
 ## Behavior
 
 * The reminder remains visible until confirmed
-* After confirmation, a visual indicator is shown briefly
+* After confirmation, a visual indicator is shown briefly (default: 5 seconds)
 * After that, the module becomes invisible
-* Reset happens automatically once per day
+* The reminder resets automatically once per day (default: at 03:00)
 
 ---
 
 ## Notes
 
 * State is stored in browser localStorage
-* Works without node_helper or backend
-* Input can come from any source (scripts, GPIO, voice assistants, etc.)
+* No backend or node_helper is required
+* Input can come from any source
+* HTTP-based triggering (e.g. using curl) requires a module such as `MMM-CurlToNotification`
 
 ---
 
