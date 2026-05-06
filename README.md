@@ -42,7 +42,15 @@ Add the module to your `config.js`:
 
 ## Usage
 
-The module reacts to MagicMirror notifications. Suggestion is to position it in the top_center, in our example right between the weather and the date/clock module.
+The module reacts to MagicMirror notifications.
+
+Notifications can be triggered from various sources, for example:
+- shell scripts (e.g. using curl)
+- hardware buttons (via GPIO scripts)
+- existing MagicMirror button modules
+- external integrations (voice assistants, home automation, etc.)
+
+It is typically placed in the `top_center` position, for example between weather and clock modules.
 
 In the morning you will see a reminder to take your medication:
 <img width="1430" height="180" alt="image" src="https://github.com/user-attachments/assets/19a75af2-e895-478b-96d2-9dcc3d6db362" />
